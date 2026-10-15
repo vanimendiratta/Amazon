@@ -4,78 +4,208 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Product | Acciojob</title>
-    <link rel="shortcut icon" href="https://thumbs.dreamstime.com/b/amazon-logo-white-background-montreal-canada-july-printed-paper-98221126.jpg" type="image/x-icon">
+    <meta name="description" content="Amazon Product Details - View technical specifications, customer ratings, deals, and simulated purchase options.">
+    <title>Amazon Product Detail</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-    <!-- NAVBAR -->
+    <!-- MAIN NAVBAR -->
     <header class="header">
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Main Navigation">
             <div class="header-container">
-                <img class="amazon-logo" src="https://mlsvc01-prod.s3.amazonaws.com/fd4e81f3101/a77159a6-cbf4-46a1-a731-522b77da3e42.png?ver=1649349594000" alt="Amazon Logo">
+                <!-- Logo with Working Link -->
+                <a href="index.html" class="header-logo-link" aria-label="Amazon Home">
+                    <img class="amazon-logo" src="https://mlsvc01-prod.s3.amazonaws.com/fd4e81f3101/a77159a6-cbf4-46a1-a731-522b77da3e42.png?ver=1649349594000" alt="Amazon Logo">
+                </a>
+
+                <!-- Deliver To Location -->
+                <div class="header-deliver-to" role="button" tabindex="0" aria-label="Deliver to New Delhi 110001">
+                    <svg class="deliver-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    <div class="deliver-text">
+                        <span class="deliver-line-1">Deliver to</span>
+                        <span class="deliver-line-2">New Delhi 110001</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
                 <div class="header-search">
-                    <input class="search-input" type="text">
-                    <button class="search-button" >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <label for="detail-search-input" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Search Amazon</label>
+                    <input id="detail-search-input" class="search-input" type="text" placeholder="Search Amazon.in" autocomplete="off" aria-autocomplete="list">
+                    <button class="search-button" type="button" aria-label="Submit Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
                 </div>
-                <div class="header-cart">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                        </svg>
-                    </div>
-                    <p>Cart</p>
-                </div>
-            </div>
-            <div>
 
+                <!-- Right Nav Links -->
+                <div class="header-actions-right">
+                    <a href="index.html#section-4" class="header-account-link" aria-label="Hello, sign in Accounts and Lists">
+                        <span class="account-line-1">Hello, sign in</span>
+                        <span class="account-line-2">Account &amp; Lists</span>
+                    </a>
+
+                    <!-- Cart Trigger -->
+                    <div class="header-cart" role="button" tabindex="0" aria-label="Shopping Cart">
+                        <div style="position: relative;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                            </svg>
+                            <span class="cart-badge-count">0</span>
+                        </div>
+                        <p>Cart</p>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- SECTION -1 -->
-    <section class="product-heading">
-        <section class="product-head-container">
-            <h1>Macbooks</h1>
-        </section>
-    </section>
+    <!-- SECONDARY CATEGORY SUBNAV -->
+    <nav class="subnav-bar" aria-label="Category Subnavigation">
+        <div class="subnav-inner">
+            <a href="index.html" class="subnav-link menu-all">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                <span>All</span>
+            </a>
+            <a href="index.html" class="subnav-link">Amazon miniTV</a>
+            <a href="index.html" class="subnav-link">Sell</a>
+            <a href="index.html" class="subnav-link">Best Sellers</a>
+            <a href="index.html" class="subnav-link">Today's Deals</a>
+            <a href="index.html" class="subnav-link">Mobiles</a>
+            <a href="index.html" class="subnav-link">Customer Service</a>
+            <a href="index.html" class="subnav-link">Electronics</a>
+            <a href="index.html" class="subnav-link">Prime</a>
+            <a href="index.html" class="subnav-link">Fashion</a>
+            <a href="index.html" class="subnav-link">Home &amp; Kitchen</a>
+        </div>
+    </nav>
 
-    <!-- SECTION 2 -->
-    <section class="product-detail">
-        <div class="product-container">
-            <div class="product-picture">
-                <img src="https://m.media-amazon.com/images/I/61aUBxqc5PL._SX679_.jpg" alt="">
+    <main>
+        <!-- BREADCRUMBS (Hydrated via JS) -->
+        <nav id="product-breadcrumbs" class="product-breadcrumbs" aria-label="Breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="bc-sep">&rsaquo;</span>
+            <span class="bc-current">Loading product details...</span>
+        </nav>
+
+        <!-- SECTION 2 - DYNAMIC PRODUCT DETAIL CONTAINER -->
+        <section class="product-detail" aria-label="Product Specification">
+            <div class="product-container">
+                <!-- Fallback Initial Content (Hydrated dynamically by js/pages/product-detail.js) -->
+                <div class="product-picture">
+                    <div class="main-img-wrap">
+                        <img id="main-product-image" src="https://m.media-amazon.com/images/I/61aUBxqc5PL._SX679_.jpg" alt="2021 Apple MacBook Pro 16-inch">
+                    </div>
+                </div>
+                <div class="product-detail-body">
+                    <h1 class="product-title">2021 Apple MacBook Pro (16-inch, Apple M1 Max chip with 10-core CPU and 32-core GPU, 32GB RAM, 1TB SSD) - Space Grey</h1>
+                    <h2 class="product-price">₹ 3,99,999.00</h2>
+                    <div class="product-about">
+                        <h3>About the item</h3>
+                        <ul>
+                            <li>Apple M1 Max chip for massive leaps in CPU, GPU and machine learning performance</li>
+                            <li>Up to 10-core CPU delivers up to 2x faster performance to fly through pro workflows</li>
+                            <li>Up to 32-core GPU with up to 4x faster graphics performance</li>
+                            <li>16-core Neural Engine for up to 5x faster machine learning</li>
+                            <li>Longer battery life, up to 21 hours</li>
+                            <li>32GB of unified memory so everything you do is fast and fluid</li>
+                            <li>1TB super-fast SSD storage launches apps in an instant</li>
+                        </ul>
+                    </div>
+                    <div class="buttons">
+                        <button class="add-to-cart" id="btn-detail-add-cart" type="button">Add to Cart</button>
+                        <button class="buy-now" id="btn-detail-buy-now" type="button">Buy Now</button>
+                    </div>
+                </div>
             </div>
-            <div class="product-detail-body">
-                <h1 class="product-title">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</h1>
-                <h3 class="product-price">₹ 3,99,999.00</h3>
-                <div class="product-about">
-                    <h4>About the item</h4>
-                    <ul>
-                        <li>Apple M1 Pro or M1 Max chip for a massive leap in CPU, GPU and machine learning performance</li>
-                        <li>Up to 10-core CPU delivers up to 2x faster performance to fly through pro workflows quicker than ever</li>
-                        <li>Up to 32-core GPU with up to 4x faster performance for graphics-intensive apps and games</li>
-                        <li>16-core Neural Engine for up to 5x faster machine learning performance</li>
-                        <li>Longer battery life, up to 21 hours</li>
-                        <li>Up to 64GB of unified memory so everything you do is fast and fluid</li>
-                        <li>Up to 8TB of super-fast SSD storage launches apps and opens files in an instant</li>
-                    </ul>
+        </section>
 
-                </div>
-                <div class="buttons">
-                    <button class="buy-now">Buy Now</button>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+        <!-- SECTION 3 - RELATED PRODUCTS (Populated dynamically) -->
+        <section id="related-products-section" class="related-products-section" aria-label="Related recommendations"></section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="amazon-footer">
+        <button type="button" class="back-to-top-btn" id="btn-back-to-top" aria-label="Back to top of page">Back to top</button>
+
+        <div class="footer-links-grid">
+            <div class="footer-col">
+                <h4>Get to Know Us</h4>
+                <ul>
+                    <li><a href="index.html">About Us</a></li>
+                    <li><a href="index.html">Careers</a></li>
+                    <li><a href="index.html">Press Releases</a></li>
+                    <li><a href="index.html">Amazon Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect with Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Make Money with Us</h4>
+                <ul>
+                    <li><a href="#">Sell on Amazon</a></li>
+                    <li><a href="#">Protect and Build Your Brand</a></li>
+                    <li><a href="#">Amazon Global Selling</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Fulfilment by Amazon</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Let Us Help You</h4>
+                <ul>
+                    <li><a href="#">COVID-19 and Amazon</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">100% Purchase Protection</a></li>
+                    <li><a href="#">Amazon App Download</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    
-    
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <a href="index.html" aria-label="Amazon Home">
+                <img class="footer-logo" src="https://mlsvc01-prod.s3.amazonaws.com/fd4e81f3101/a77159a6-cbf4-46a1-a731-522b77da3e42.png?ver=1649349594000" alt="Amazon Logo">
+            </a>
+            <div class="footer-legal-links">
+                <a href="#">Conditions of Use &amp; Sale</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Interest-Based Ads</a>
+            </div>
+            <p class="footer-copy">&copy; 2026, Amazon Clone Project &bull; Acciojob Portfolio Reference &bull; Built with HTML5, CSS3 &amp; Vanilla JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/data/products.js"></script>
+    <script src="js/state/cart.js"></script>
+    <script src="js/components/toast.js"></script>
+    <script src="js/components/cart-drawer.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/pages/product-detail.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const backToTop = document.getElementById("btn-back-to-top");
+        if (backToTop) {
+          backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      });
+    </script>
 </body>
 </html>

@@ -4,213 +4,423 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon | Acciojob</title>
-    <link rel="shortcut icon" href="https://thumbs.dreamstime.com/b/amazon-logo-white-background-montreal-canada-july-printed-paper-98221126.jpg" type="image/x-icon">
+    <meta name="description" content="Amazon India Storefront Clone - Browse electronics, laptops, groceries, home appliances, and fashion with live search, cart management, and seamless checkout.">
+    <title>Amazon India Clone | Online Shopping Portal</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-    <!-- NAVBAR -->
+    <!-- MAIN NAVBAR -->
     <header class="header">
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Main Navigation">
             <div class="header-container">
-                <img class="amazon-logo" src="https://mlsvc01-prod.s3.amazonaws.com/fd4e81f3101/a77159a6-cbf4-46a1-a731-522b77da3e42.png?ver=1649349594000" alt="Amazon Logo">
+                <!-- Logo -->
+                <a href="index.html" class="header-logo-link" aria-label="Amazon Home">
+                    <img class="amazon-logo" src="https://mlsvc01-prod.s3.amazonaws.com/fd4e81f3101/a77159a6-cbf4-46a1-a731-522b77da3e42.png?ver=1649349594000" alt="Amazon Logo">
+                </a>
+
+                <!-- Deliver To Location -->
+                <div class="header-deliver-to" role="button" tabindex="0" aria-label="Deliver to New Delhi 110001">
+                    <svg class="deliver-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    <div class="deliver-text">
+                        <span class="deliver-line-1">Deliver to</span>
+                        <span class="deliver-line-2">New Delhi 110001</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
                 <div class="header-search">
-                    <input class="search-input" type="text">
-                    <button class="search-button" >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <label for="main-search-input" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Search Amazon</label>
+                    <input id="main-search-input" class="search-input" type="text" placeholder="Search Amazon.in" autocomplete="off" aria-autocomplete="list">
+                    <button class="search-button" type="button" aria-label="Submit Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
                 </div>
-                <div class="header-cart">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                        </svg>
-                    </div>
-                    <p>Cart</p>
-                </div>
-            </div>
-            <div>
 
+                <!-- Right Nav Links -->
+                <div class="header-actions-right">
+                    <a href="#section-4" class="header-account-link" aria-label="Hello, sign in Accounts and Lists">
+                        <span class="account-line-1">Hello, sign in</span>
+                        <span class="account-line-2">Account &amp; Lists</span>
+                    </a>
+
+                    <!-- Cart Trigger -->
+                    <div class="header-cart" role="button" tabindex="0" aria-label="Shopping Cart">
+                        <div style="position: relative;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                            </svg>
+                            <span class="cart-badge-count">0</span>
+                        </div>
+                        <p>Cart</p>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- SECTION 1 -->
-    <section class="section-1">
-        <div class="section-1-container">
-            <div class="section-1-column">
-                <h3>Top picks for your home</h3>
-                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg" alt="">
-                <p>See more</p>
-            </div>
-            <div class="section-1-column">
-                <h3>Top rated, premium quality | Amazon Brands & more</h3>
-                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonSmallBusinessDay/PrivateBrands/GW20/GW_Desktop_Softlines_QC_2X_V2_5._SY232_CB636581721_.jpg" alt="">
-                <p>See more</p>
-            </div>
-            <div class="section-1-column">
-                <h3>Shop & Pay | Earn rewards daily</h3>
-                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Electronics/Clearance/Clearance_store_Desktop_CC_2x._SY608_CB628315133_.jpg" alt="">
-                <p>See more</p>
-            </div>
-            <div class="section-1-column">
-                <h3>Sign in for your best experience</h3>
-                <button>Sign in securely</button>
-            </div>
+    <!-- SECONDARY CATEGORY SUBNAV -->
+    <nav class="subnav-bar" aria-label="Category Subnavigation">
+        <div class="subnav-inner">
+            <a href="#" class="subnav-link menu-all">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                <span>All</span>
+            </a>
+            <a href="#" class="subnav-link">Amazon miniTV</a>
+            <a href="#" class="subnav-link">Sell</a>
+            <a href="#" class="subnav-link">Best Sellers</a>
+            <a href="#" class="subnav-link">Today's Deals</a>
+            <a href="#" class="subnav-link">Mobiles</a>
+            <a href="#" class="subnav-link">Customer Service</a>
+            <a href="#" class="subnav-link">Electronics</a>
+            <a href="#" class="subnav-link">Prime</a>
+            <a href="#" class="subnav-link">Fashion</a>
+            <a href="#" class="subnav-link">Home &amp; Kitchen</a>
         </div>
-    </section>
+    </nav>
 
-    <!-- SECTION 2 - Related Items -->
-    <section class="section-2">
-        <div class="section-2-container">
-            <h3>Related to items you've viewed</h3>
-            <div class="product-cards">
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/61Y30DpqRVL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/61LNnZPoKPS._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/71iiXU7HHkL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/712B4P3yOnL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/51eTOVYRbTL._AC_SY400_.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SECTION 2 - Groceries -->
-    <section class="section-2">
-        <div class="section-2-container">
-            <h3>Best Sellers in Grocery & Gourmet Foods</h3>
-            <div class="product-cards">
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/617tvTiZLGL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/51tNket0w8L._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/91oNY+gNzPL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/81NrftYFxsL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/61uohjMdfzL._AC_SY400_.jpg" alt="">
-                </div>
-                <div class="product-card">
-                    <img src="https://m.media-amazon.com/images/I/61oagbcgAtS._AC_SY400_.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SECTION 3 -->
-    <section class="section-3">
-        <section class="section-3-container">
-            <h3>Inspired by your browsing history</h3>
-            <div class="product-detail-cards">
-                <div class="product-detail-card">
-                    <div class="product-detail-img">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/61aUBxqc5PL._AC_UL320_SR320,320_.jpg" alt="">
+    <main>
+        <!-- SECTION 1 - HERO BANNER & GATEWAY CARDS -->
+        <section class="section-1" aria-label="Hero Gateway">
+            <div class="section-1-container">
+                <div class="section-1-column">
+                    <h3>Top picks for your home</h3>
+                    <div class="card-img-wrap">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg" alt="Air Conditioners and home cooling appliances">
                     </div>
-                    <a class="product-detail-link" href="./product.html">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</a>
-                    <p>
-                        <strong class="product-price">₹ 3,99,999.00</strong>
-                    </p>
-                    <p class="product-deliver-by">Get it by <strong>Monday, August 22</strong> 
-                        FREE Delivery over ₹499. Fulfilled by Amazon.
-                    </p>
+                    <a href="product.html?id=lg-split-ac-1-5-ton" class="see-more-link">See more deals</a>
                 </div>
-                <div class="product-detail-card">
-                    <div class="product-detail-img">
-                        <img src="https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_UY436_FMwebp_QL65_.jpg" alt="">
+                <div class="section-1-column">
+                    <h3>Top rated, premium quality | Amazon Brands</h3>
+                    <div class="card-img-wrap">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonSmallBusinessDay/PrivateBrands/GW20/GW_Desktop_Softlines_QC_2X_V2_5._SY232_CB636581721_.jpg" alt="Amazon Brands fashion and casual wear">
                     </div>
-                    <a class="product-detail-link" href="./product.html">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</a>
-                    <p>
-                        <strong class="product-price">₹ 3,99,999.00</strong>
-                    </p>
-                    <p class="product-deliver-by">Get it by <strong>Monday, August 22</strong> 
-                        FREE Delivery over ₹499. Fulfilled by Amazon.
-                    </p>
+                    <a href="product.html?id=amazon-symbol-polo-shirt" class="see-more-link">Explore styles</a>
                 </div>
-                <div class="product-detail-card">
-                    <div class="product-detail-img">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/61LNnZPoKPS._AC_UL320_SR320,320_.jpg" alt="">
+                <div class="section-1-column">
+                    <h3>Shop &amp; Pay | Earn rewards daily</h3>
+                    <div class="card-img-wrap">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Electronics/Clearance/Clearance_store_Desktop_CC_2x._SY608_CB628315133_.jpg" alt="Electronics and laptop clearance store">
                     </div>
-                    <a class="product-detail-link" href="./product.html">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</a>
-                    <p>
-                        <strong class="product-price">₹ 3,99,999.00</strong>
-                    </p>
-                    <p class="product-deliver-by">Get it by <strong>Monday, August 22</strong> 
-                        FREE Delivery over ₹499. Fulfilled by Amazon.
-                    </p>
+                    <a href="product.html?id=asus-zenbook-oled-collection" class="see-more-link">View clearance offers</a>
                 </div>
-                <div class="product-detail-card">
-                    <div class="product-detail-img">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/71hmqIQJFdL._AC_UL320_SR320,320_.jpg" alt="">
+                <div class="section-1-column sign-in-card">
+                    <h3>Sign in for your best experience</h3>
+                    <button type="button" id="btn-hero-signin">Sign in securely</button>
+                    <div class="sign-in-ad-box">
+                        <p>Customers with Prime get fast, free shipping and video streaming</p>
                     </div>
-                    <a class="product-detail-link" href="./product.html">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</a>
-                    <p>
-                        <strong class="product-price">₹ 3,99,999.00</strong>
-                    </p>
-                    <p class="product-deliver-by">Get it by <strong>Monday, August 22</strong> 
-                        FREE Delivery over ₹499. Fulfilled by Amazon.
-                    </p>
-                </div>
-                <div class="product-detail-card">
-                    <div class="product-detail-img">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/71eknZxZLmL._AC_UL320_SR320,320_.jpg" alt="">
-                    </div>
-                    <a class="product-detail-link" href="./product.html">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</a>
-                    <p>
-                        <strong class="product-price">₹ 3,99,999.00</strong>
-                    </p>
-                    <p class="product-deliver-by">Get it by <strong>Monday, August 22</strong> 
-                        FREE Delivery over ₹499. Fulfilled by Amazon.
-                    </p>
-                </div>
-                <div class="product-detail-card">
-                    <div class="product-detail-img">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/91k86Cdp1uL._AC_UL320_SR320,320_.jpg" alt="">
-                    </div>
-                    <a class="product-detail-link" href="./product.html">2021 Apple MacBook Pro (16-inch//41.05 cm, Apple M1 Max chip with 10‑core CPU and 32‑core GPU, 32GB RAM, 1TB SSD) - Space Grey</a>
-                    <p>
-                        <strong class="product-price">₹ 3,99,999.00</strong>
-                    </p>
-                    <p class="product-deliver-by">Get it by <strong>Monday, August 22</strong> 
-                        FREE Delivery over ₹499. Fulfilled by Amazon.
-                    </p>
                 </div>
             </div>
         </section>
-    </section>
 
-    <!-- SECTION 4 -->
-    <section class="section-4">
-        <div class="section-4-container">
-            <p>See personalized recommendations</p>
-            <button>Sign in</button>
-            <p>New customer? Start here.</p>
-        </div>
-    </section>
+        <!-- SECTION 2 - Related Items Carousel -->
+        <section class="section-2" aria-label="Related items you viewed">
+            <div class="section-2-container">
+                <h3>Related to items you've viewed</h3>
+                <div class="product-cards" id="related-items-carousel">
+                    <!-- Dynamic rendering via JS, fallback static structure -->
+                    <div class="product-card" data-product-id="macbook-air-m1-space-grey">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/61Y30DpqRVL._AC_SY400_.jpg" alt="Apple MacBook Air M1">
+                        </div>
+                        <a href="product.html?id=macbook-air-m1-space-grey" class="product-card-title">2020 Apple MacBook Air (13.3-inch, M1 chip, 8GB RAM, 256GB SSD)</a>
+                        <p class="product-card-price">₹ 82,990.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="macbook-air-m1-space-grey">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="imac-24-m1-silver">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/61LNnZPoKPS._AC_SY400_.jpg" alt="Apple iMac 24-inch Retina 4.5K">
+                        </div>
+                        <a href="product.html?id=imac-24-m1-silver" class="product-card-title">Apple iMac 24-inch Retina 4.5K (M1 Chip, 8GB RAM, 256GB SSD)</a>
+                        <p class="product-card-price">₹ 1,19,900.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="imac-24-m1-silver">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="ipad-air-5th-gen-blue">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/71iiXU7HHkL._AC_SY400_.jpg" alt="Apple iPad Air 5th Generation">
+                        </div>
+                        <a href="product.html?id=ipad-air-5th-gen-blue" class="product-card-title">2022 Apple iPad Air (10.9-inch, Wi-Fi, 64GB) - Blue</a>
+                        <p class="product-card-price">₹ 54,900.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="ipad-air-5th-gen-blue">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="xiaomi-mi-notebook-pro">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_SY400_.jpg" alt="Xiaomi Mi Notebook Pro">
+                        </div>
+                        <a href="product.html?id=xiaomi-mi-notebook-pro" class="product-card-title">Xiaomi Mi Notebook Pro (11th Gen Core i5, 16GB RAM, 512GB SSD)</a>
+                        <p class="product-card-price">₹ 56,999.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="xiaomi-mi-notebook-pro">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="ipad-10-2-9th-gen">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/712B4P3yOnL._AC_SY400_.jpg" alt="Apple iPad 10.2-inch 9th Gen">
+                        </div>
+                        <a href="product.html?id=ipad-10-2-9th-gen" class="product-card-title">Apple iPad 10.2-inch (9th Gen, Wi-Fi, 64GB) - Space Grey</a>
+                        <p class="product-card-price">₹ 29,900.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="ipad-10-2-9th-gen">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="mac-mini-m1">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/51eTOVYRbTL._AC_SY400_.jpg" alt="Apple Mac Mini M1 Chip">
+                        </div>
+                        <a href="product.html?id=mac-mini-m1" class="product-card-title">Apple Mac Mini (Apple M1 Chip, 8GB RAM, 256GB SSD) - Silver</a>
+                        <p class="product-card-price">₹ 59,900.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="mac-mini-m1">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 - Groceries Carousel -->
+        <section class="section-2" aria-label="Best Sellers in Grocery">
+            <div class="section-2-container">
+                <h3>Best Sellers in Grocery &amp; Gourmet Foods</h3>
+                <div class="product-cards" id="groceries-carousel">
+                    <div class="product-card" data-product-id="cadbury-chocobakes-cakes">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/617tvTiZLGL._AC_SY400_.jpg" alt="Cadbury Chocobakes Layered Cakes">
+                        </div>
+                        <a href="product.html?id=cadbury-chocobakes-cakes" class="product-card-title">Cadbury Chocobakes Choc Layered Cakes (Box of 6, 126g)</a>
+                        <p class="product-card-price">₹ 60.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="cadbury-chocobakes-cakes">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="quaker-rolled-oats-1kg">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/51tNket0w8L._AC_SY400_.jpg" alt="Quaker Rolled Oats 1kg">
+                        </div>
+                        <a href="product.html?id=quaker-rolled-oats-1kg" class="product-card-title">Quaker Rolled Oats 1kg, 100% Wholegrain Oats</a>
+                        <p class="product-card-price">₹ 190.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="quaker-rolled-oats-1kg">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="vedaka-raw-peanuts-1kg">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/91oNY+gNzPL._AC_SY400_.jpg" alt="Vedaka Raw Peanut 1kg">
+                        </div>
+                        <a href="product.html?id=vedaka-raw-peanuts-1kg" class="product-card-title">Amazon Brand - Vedaka Raw Peanut / Groundnut Seeds (1kg)</a>
+                        <p class="product-card-price">₹ 185.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="vedaka-raw-peanuts-1kg">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="aashirvaad-iodised-salt-1kg">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/81NrftYFxsL._AC_SY400_.jpg" alt="Aashirvaad Iodised Salt 1kg">
+                        </div>
+                        <a href="product.html?id=aashirvaad-iodised-salt-1kg" class="product-card-title">Aashirvaad Iodised Salt (1kg Pouch) - Vacuum Evaporated</a>
+                        <p class="product-card-price">₹ 28.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="aashirvaad-iodised-salt-1kg">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="tata-sampann-high-fibre-poha-500g">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/61uohjMdfzL._AC_SY400_.jpg" alt="Tata Sampann Poha 500g">
+                        </div>
+                        <a href="product.html?id=tata-sampann-high-fibre-poha-500g" class="product-card-title">Tata Sampann High in Fibre Thick Poha (500g)</a>
+                        <p class="product-card-price">₹ 58.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="tata-sampann-high-fibre-poha-500g">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-product-id="fortune-sunlite-sunflower-oil-1l">
+                        <div class="product-card-img-wrap">
+                            <img src="https://m.media-amazon.com/images/I/61oagbcgAtS._AC_SY400_.jpg" alt="Fortune Sunlite Sunflower Oil 1L">
+                        </div>
+                        <a href="product.html?id=fortune-sunlite-sunflower-oil-1l" class="product-card-title">Fortune Sunlite Refined Sunflower Oil (1 Litre Pouch)</a>
+                        <p class="product-card-price">₹ 135.00</p>
+                        <button type="button" class="product-card-btn" data-quick-add="fortune-sunlite-sunflower-oil-1l">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 - Inspired by Browsing History (Bug Fix: Distinct Items & Prices) -->
+        <section class="section-3" aria-label="Inspired by your browsing history">
+            <div class="section-3-container">
+                <h3>Inspired by your browsing history</h3>
+                <div class="product-detail-cards" id="browsing-history-cards">
+                    <div class="product-detail-card" data-product-id="macbook-pro-16-m1-max">
+                        <div class="product-detail-img">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/I/61aUBxqc5PL._AC_UL320_SR320,320_.jpg" alt="2021 Apple MacBook Pro 16-inch M1 Max">
+                        </div>
+                        <a class="product-detail-link" href="product.html?id=macbook-pro-16-m1-max">2021 Apple MacBook Pro (16-inch, M1 Max, 32GB RAM, 1TB SSD) - Space Grey</a>
+                        <p><strong class="product-price">₹ 3,99,999.00</strong></p>
+                        <p class="product-deliver-by">Get it by <strong>Tomorrow</strong><br>FREE Delivery over ₹499. Fulfilled by Amazon.</p>
+                        <button type="button" class="btn-card-add-cart" data-quick-add="macbook-pro-16-m1-max">Add to Cart</button>
+                    </div>
+                    <div class="product-detail-card" data-product-id="iphone-13-blue">
+                        <div class="product-detail-img">
+                            <img src="https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_UY436_FMwebp_QL65_.jpg" alt="Apple iPhone 13 128GB Blue">
+                        </div>
+                        <a class="product-detail-link" href="product.html?id=iphone-13-blue">Apple iPhone 13 (128GB) - Blue</a>
+                        <p><strong class="product-price">₹ 69,999.00</strong></p>
+                        <p class="product-deliver-by">Get it by <strong>Tomorrow</strong><br>FREE Delivery over ₹499. Fulfilled by Amazon.</p>
+                        <button type="button" class="btn-card-add-cart" data-quick-add="iphone-13-blue">Add to Cart</button>
+                    </div>
+                    <div class="product-detail-card" data-product-id="imac-24-m1-silver">
+                        <div class="product-detail-img">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/I/61LNnZPoKPS._AC_UL320_SR320,320_.jpg" alt="Apple iMac 24-inch Retina 4.5K Silver">
+                        </div>
+                        <a class="product-detail-link" href="product.html?id=imac-24-m1-silver">Apple iMac 24-inch Retina 4.5K (M1 Chip, 8GB RAM, 256GB SSD) - Silver</a>
+                        <p><strong class="product-price">₹ 1,19,900.00</strong></p>
+                        <p class="product-deliver-by">Get it by <strong>Tomorrow</strong><br>FREE Delivery over ₹499. Fulfilled by Amazon.</p>
+                        <button type="button" class="btn-card-add-cart" data-quick-add="imac-24-m1-silver">Add to Cart</button>
+                    </div>
+                    <div class="product-detail-card" data-product-id="hp-pavilion-15">
+                        <div class="product-detail-img">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/I/71hmqIQJFdL._AC_UL320_SR320,320_.jpg" alt="HP Pavilion 15 Intel Core i5">
+                        </div>
+                        <a class="product-detail-link" href="product.html?id=hp-pavilion-15">HP Pavilion 15 (12th Gen Intel Core i5, 16GB RAM, 512GB SSD, FHD IPS)</a>
+                        <p><strong class="product-price">₹ 68,990.00</strong></p>
+                        <p class="product-deliver-by">Get it by <strong>Tomorrow</strong><br>FREE Delivery over ₹499. Fulfilled by Amazon.</p>
+                        <button type="button" class="btn-card-add-cart" data-quick-add="hp-pavilion-15">Add to Cart</button>
+                    </div>
+                    <div class="product-detail-card" data-product-id="amazon-basics-laptop-sleeve">
+                        <div class="product-detail-img">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/I/71eknZxZLmL._AC_UL320_SR320,320_.jpg" alt="Amazon Basics Laptop Sleeve 15.6 inch">
+                        </div>
+                        <a class="product-detail-link" href="product.html?id=amazon-basics-laptop-sleeve">Amazon Basics Pro Laptop Sleeve Case (Water-Resistant, 15.6-inch) - Jet Black</a>
+                        <p><strong class="product-price">₹ 899.00</strong></p>
+                        <p class="product-deliver-by">Get it by <strong>Tomorrow</strong><br>FREE Delivery over ₹499. Fulfilled by Amazon.</p>
+                        <button type="button" class="btn-card-add-cart" data-quick-add="amazon-basics-laptop-sleeve">Add to Cart</button>
+                    </div>
+                    <div class="product-detail-card" data-product-id="inateck-shockproof-laptop-bag">
+                        <div class="product-detail-img">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/I/91k86Cdp1uL._AC_UL320_SR320,320_.jpg" alt="Inateck Shockproof Laptop Carrying Case">
+                        </div>
+                        <a class="product-detail-link" href="product.html?id=inateck-shockproof-laptop-bag">Inateck Shockproof 360 Protective Laptop Carrying Case (16-inch) - Grey</a>
+                        <p><strong class="product-price">₹ 1,499.00</strong></p>
+                        <p class="product-deliver-by">Get it by <strong>Tomorrow</strong><br>FREE Delivery over ₹499. Fulfilled by Amazon.</p>
+                        <button type="button" class="btn-card-add-cart" data-quick-add="inateck-shockproof-laptop-bag">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 - Personalized Recommendations -->
+        <section class="section-4" id="section-4" aria-label="Personalized recommendations">
+            <div class="section-4-container">
+                <p>See personalized recommendations</p>
+                <button type="button" id="btn-footer-signin">Sign in</button>
+                <p>New customer? <a href="#" class="section-4-start-link" id="link-start-here">Start here.</a></p>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <code>Made with ❤️ at Acciojob</code>
+    <footer class="amazon-footer">
+        <button type="button" class="back-to-top-btn" id="btn-back-to-top" aria-label="Back to top of page">Back to top</button>
+
+        <div class="footer-links-grid">
+            <div class="footer-col">
+                <h4>Get to Know Us</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Amazon Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect with Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Make Money with Us</h4>
+                <ul>
+                    <li><a href="#">Sell on Amazon</a></li>
+                    <li><a href="#">Protect and Build Your Brand</a></li>
+                    <li><a href="#">Amazon Global Selling</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Fulfilment by Amazon</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Let Us Help You</h4>
+                <ul>
+                    <li><a href="#">COVID-19 and Amazon</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">100% Purchase Protection</a></li>
+                    <li><a href="#">Amazon App Download</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <a href="index.html" aria-label="Amazon Home">
+                <img class="footer-logo" src="https://mlsvc01-prod.s3.amazonaws.com/fd4e81f3101/a77159a6-cbf4-46a1-a731-522b77da3e42.png?ver=1649349594000" alt="Amazon Logo">
+            </a>
+            <div class="footer-legal-links">
+                <a href="#">Conditions of Use &amp; Sale</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Interest-Based Ads</a>
+            </div>
+            <p class="footer-copy">&copy; 2026, Amazon Clone Project &bull; Acciojob Portfolio Reference &bull; Built with HTML5, CSS3 &amp; Vanilla JavaScript</p>
+        </div>
     </footer>
 
+    <!-- SCRIPTS -->
+    <script src="js/data/products.js"></script>
+    <script src="js/state/cart.js"></script>
+    <script src="js/components/toast.js"></script>
+    <script src="js/components/cart-drawer.js"></script>
+    <script src="js/components/navbar.js"></script>
 
+    <script>
+      // Page Level Event Listeners
+      document.addEventListener("DOMContentLoaded", () => {
+        // Back to top button
+        const backToTop = document.getElementById("btn-back-to-top");
+        if (backToTop) {
+          backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        // Quick Add to Cart Button Delegation
+        document.body.addEventListener("click", (e) => {
+          const btn = e.target.closest("[data-quick-add]");
+          if (btn && window.ProductCatalog && window.amazonCart) {
+            const id = btn.getAttribute("data-quick-add");
+            const product = window.ProductCatalog.getProductById(id);
+            if (product) {
+              window.amazonCart.addItem(product, 1);
+              if (window.Toast) {
+                window.Toast.success(`Added "${product.title.substring(0, 32)}..." to Cart!`);
+              }
+            }
+          }
+        });
+
+        // Sign in mock handlers
+        const handleSignIn = () => {
+          if (window.Toast) {
+            window.Toast.info("Simulated Amazon Sign-In: Logged in as demo user (demo@amazon.test)");
+          }
+        };
+
+        const heroSignIn = document.getElementById("btn-hero-signin");
+        if (heroSignIn) heroSignIn.addEventListener("click", handleSignIn);
+
+        const footerSignIn = document.getElementById("btn-footer-signin");
+        if (footerSignIn) footerSignIn.addEventListener("click", handleSignIn);
+
+        const startHere = document.getElementById("link-start-here");
+        if (startHere) {
+          startHere.addEventListener("click", (e) => {
+            e.preventDefault();
+            handleSignIn();
+          });
+        }
+      });
+    </script>
 </body>
 </html>

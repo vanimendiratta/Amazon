@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#131921"/>
+  <path d="M14 36c7 5 18 8 28 4 4.5-1.7 8.5-4.5 10.5-6.5-0.5 1-2 3.5-5 5.5-7 4.5-20.5 5-30.5-1-1-0.6-2.5-1.5-3-2z" fill="#febd68"/>
+  <path d="M51 32c1.5 1.5 3.5 4 4 6.5-1.2-0.5-3.5-1.2-6-1.5 0.5-1.5 1.2-3.5 2-5z" fill="#febd68"/>
+  <text x="32" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle">a</text>
+</svg>
