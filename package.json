@@ -1,0 +1,27 @@
+{
+  "name": "amazon-storefront-clone",
+  "version": "1.0.0",
+  "description": "High-fidelity, responsive Amazon storefront e-commerce web application featuring live search, cart state management, product details, and simulated checkout.",
+  "main": "js/data/products.js",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000",
+    "lint": "node --check js/data/*.js js/state/*.js js/components/*.js js/pages/*.js tests/*.js"
+  },
+  "keywords": [
+    "amazon-clone",
+    "ecommerce",
+    "javascript",
+    "html5",
+    "css3",
+    "responsive-design",
+    "cart-management",
+    "frontend-portfolio"
+  ],
+  "author": "Vani Mendiratta",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
