@@ -203,7 +203,6 @@ npm run lint
 │   │   ├── product_detail.png
 │   │   └── search_autocomplete.png
 │   ├── ARCHITECTURE.md          # System design & sequence diagrams
-│   ├── IMPLEMENTATION_PLAN.md   # Prioritized tasks & acceptance criteria
 │   └── PROJECT_AUDIT.md         # Comprehensive engineering audit report
 ├── js/
 │   ├── components/
